@@ -207,7 +207,26 @@ class _CalculadoraScreenState extends State<CalculadoraScreen> {
                           ),
                         ),
                       ),
-                      _crearBoton('⌫', _borrar, color: Colors.orange),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.orange,
+                              padding: const EdgeInsets.all(24),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                            onPressed: _borrar,
+                            child: const Icon(
+                              Icons.backspace_outlined,
+                              color: Colors.white,
+                              size: 28,
+                            ),
+                          ),
+                        ),
+                      ),
                       _crearBoton(
                         '÷',
                         () => _presionarOperacion('/'),
